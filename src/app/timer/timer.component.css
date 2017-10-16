@@ -1,0 +1,34 @@
+.button {
+    margin-bottom: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+}
+
+.col-lg-4 {
+    width: 200px;
+    padding-right: 85px;
+}
+
+.container {
+    margin-top: 40px;
+    margin-left: 450px;
+}
+
+span {
+    color: black;
+}
+
+#score {
+    text-align: center;
+}
+
+#start {
+    margin-left: 100px;
+}
+
+#quad {
+    text-align: center;
+}
