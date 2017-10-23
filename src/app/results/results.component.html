@@ -1,0 +1,24 @@
+<body>
+    <div class="container">
+        <h2>Results</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>EmailID</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let he of hero">
+                <tr>
+                    <td>{{he.id}}</td>
+                    <td>{{he.name}}</td>
+                    <td>{{he.emailID}}</td>
+                    <td>{{he.score}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>

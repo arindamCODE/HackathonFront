@@ -1,22 +1,4 @@
-<button class="btn btn-primary" id="start"> Start</button>
 <div class="container">
-    <!--logic for Box UI using divs-->
-
-    <!--<div class="col-lg-3"></div>
-
-         <div class="col-lg-3">
-           <div class="RightCol1" (click)="BoxClick(1,'box1')"  id ="box1"></div>
-           <div class="RightCol1" (click)="BoxClick(2,'box2')"  id ="box2"></div>
-         </div>
-
-         <div class="col-lg-3">
-            <div class="RightCol1" (click)="BoxClick(1,'box1')"  id ="box1"></div>
-            <div class="RightCol1" (click)="BoxClick(2,'box2')"  id ="box2"></div>
-         </div>
-
-     <div class="col-lg-3"></div>
- </div>
-</div>-->
     <div class="row">
         <div class="col-lg-4">
             <button class="button btn btn-default" (click)="BoxClick(1,'box1')" id="box1"></button>
@@ -36,18 +18,13 @@
 </div>
 
 <br>
-<!--logic for display of timer-->
 
-<!--<h3 class="text-center">Timer:
-    {{this.hackathon.hoursDisplay ? this.hackathon.hoursDisplay : '00'}} :
-    {{(this.hackathon.minutesDisplay) && (this.hackathon.minutesDisplay <= 59) ? this.hackathon.minutesDisplay : '00'}} :
-    {{(this.hackathon.secondsDisplay) && (this.hackathon.secondsDisplay <= 59) ? this.hackathon.secondsDisplay : '00'}} <br/>-->
 <br>
 
 <h3 class="text-center" *ngIf="!this.finish">Player Score:{{score}}</h3>
 <h2 class="text-center" *ngIf="this.finish">Game Over. Your score is {{score}}.</h2><br><br><br>
 
-<!--<h2 id="score">Score: {{score}}</h2>-->
+
 <div>
     <button type="button" id="submit" class="btn btn-primary" (click)="modal.show()">Save</button>
 </div>
@@ -68,79 +45,29 @@
                 <div class="tab-pane active" id="tab1">
                     <form id=myModal data-toggle="validator" role="form" #f="ngForm">
 
-
-                        <!-- <div class="form-group">
-                            <label for="inputName" class="control-label">Name*</label>
-                            <input #nameBox type="text" class="form-control" id="inputName" name="inputName" placeholder="Name" required>
-                            <label for="inputGit" class="control-label">Git Url*</label>
-                            <input #gitBox type="text" class="form-control" id="inputName" name="inputGit" placeholder="Your Git Url" required>
-                            <label for="inputNumber" class="control-label">ID*</label>
-                            <input #idBox type="number" max="999999999" class="form-control" id="inputNumber" placeholder="Id" data-error="ID is invalid" required>
-                            <div class="help-block with-errors"></div>
-
-                        </div> -->
-
-
                         <div class="form-group">
                             <label for="id">ID</label>
-                            <input #ID type="text" class="form-control" id="id" placeholder="Enter ID">
+                            <input #ID type="text" class="form-control" id="id" placeholder="Enter ID" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input #Name type="text" class="form-control" id="name" placeholder="Enter Name">
+                            <input #Name type="text" class="form-control" id="name" placeholder="Enter Name" required>
+                            <div>
+                                Name is Required!
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input #EmailID type="email" class="form-control" id="emailid" placeholder="Enter Email">
+                            <input #EmailID type="email" class="form-control" id="emailid" placeholder="Enter Email" required>
                         </div>
 
                         <div class="form-group">
                             <label for="score">Score</label>
-                            <input disabled value="{{score}}" type="number" class="form-control" id="score" data-error="Invalid" required>
-                            <!-- <input #Score type="text" class="form-control" id="score" placeholder="Enter Score"> -->
+                            <input disabled value="{{score}}" type="number" class="form-control" id="score" data-error="Invalid">
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)='saveDetails(ID.value, Name.value, EmailID.value)'>Submit</button>
-
-
-                        <!--  <span class="glyphicon form-control-feedback" aria-hidden="true"></span> -->
-
-
-                        <!-- ############## Email ##################### -->
-
-                        <!--  <div class="form-group">
-                            <label for="inputEmail" class="control-label">Email*</label>
-                            <input #emailBox type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" data-error="Email address is invalid" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
- -->
-
-                        <!-- [3:27] -->
-                        <!-- ############## City ##################### -->
-                        <!--  <div class="dropdown">
-                            <label class="control-label">Choose City  </label>
-                            <select #city type="A" class="btn btn-default btn-block dropdown-toggle">
-                                           
-                                                  <option>Mumbai</option>
-                                                  <option>Chennai</option>
-                                                  <option>Kolkata</option>
-                                                  <option>Bangaluru</option>
-                                                  <option>Guwahati</option>
-                                                </select>
-                        </div> -->
-
-                        <!-- ############## Score ##################### -->
-
-                        <!-- <div class="form-group">
-                            <label for="inputNumber" class="control-label">Score*</label>
-                            <input disabled value="{{score}}" type="number" class="form-control" id="inputNumber" data-error="Score is invalid" required>
-                            <div class="help-block with-errors"></div>
-                        </div> -->
-
-                        <!--  <div class="form-group">
-                            <button type="submit" class="btn btn-primary" (click)="(onSubmit(nameBox.value,emailBox.value,idBox.value,city.value,gitBox.value))">Submit</button>
-                        </div> -->
+                        <button type="submit" class="btn btn-primary" (click)='saveDetails(ID.value, Name.value, EmailID.value)' routerLink="/pre">Submit</button>
                     </form>
                 </div>
             </div>
@@ -153,7 +80,3 @@
         <button type="button" class="btn btn-default" (click)="modal.hide()">Close</button>
     </div>
 </app-modal>
-
-<!-- modal -->
-
-<!--<h2 id="score">Score: {{score}}</h2>-->

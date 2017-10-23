@@ -7,27 +7,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { TimerComponent } from './timer/timer.component';
 import { ModalComponent } from './modal/modal.component';
+import { ResultsComponent } from './results/results.component';
+import { PreResultComponent } from './pre-result/pre-result.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/timer', pathMatch: 'full' },
-  { path: 'form', component: FormComponent },
-  { path: 'timer', component: TimerComponent }
+  { path: 'timer', component: TimerComponent },
+  { path: 'result', component: ResultsComponent },
+  { path: 'pre', component: PreResultComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
-    HeaderComponent,
-    FooterComponent,
     TimerComponent,
-    ModalComponent
+    ModalComponent,
+    ResultsComponent,
+    PreResultComponent
   ],
   imports: [
     BrowserModule,

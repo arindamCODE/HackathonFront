@@ -1,16 +1,16 @@
 
 export class Hero 
 {
-    ID: number;
-    Name: string;
-    EmailID: string;
-    Score: number;
+    id: number;
+    name: string;
+    emailID: string;
+    score: number;
 
     constructor(id: number, name: string, emailid: string, score: number){
-        this.ID = id;
-        this.Name = name;
-        this.EmailID = emailid;
-        this.Score = score;
+        this.id = id;
+        this.name = name;
+        this.emailID = emailid;
+        this.score = score;
      }
 
 }
